@@ -5,10 +5,10 @@ import Header from '../components/Header'
 
 
 
-const Home = () => (
+const List = () => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>List</title>
     </Head>
     <Header></Header>
     <Row className="comm-main" type="flex" justify="center">
@@ -23,4 +23,4 @@ const Home = () => (
   </div>
 )
 
-export default Home
+export default List
