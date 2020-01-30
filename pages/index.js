@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
 import {Button} from 'antd'
+import Header from '../components/Header'
+
 
 
 const Home = () => (
@@ -9,7 +10,7 @@ const Home = () => (
     <Head>
       <title>Home</title>
     </Head>
-    <div><Button>按钮</Button></div>
+    <Header></Header>
   </div>
 )
 
