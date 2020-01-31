@@ -4,6 +4,7 @@ import {Row, Col, List, Icon} from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
+import Footer from '../components/Footer'
 
 import '../public/style/pages/index.css'
 
@@ -52,8 +53,10 @@ const Home = () => {
                     <Author />
                     <Advert />
 				</Col>
-			</Row>
-
+            </Row>
+            
+            <Footer/>
+            
 		</div>
 	)
   
