@@ -97,7 +97,7 @@ const Detailed = () => {
 								<MarkNav
 									className="article-menu"
 									source={markdown}
-									ordered={false} 
+									ordered={false}
 								/>
 							</div>
 						</Affix>
