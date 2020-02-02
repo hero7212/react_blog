@@ -9,7 +9,7 @@ import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 
 import '../public/style/pages/index.css'
-
+import servicePath from '../config/apiUrl'
 
 
 const Home = (list) => {
@@ -64,7 +64,7 @@ const Home = (list) => {
 Home.getInitialProps = async () => {
 
     const promise = new Promise((resolve) => {
-        axios('http://localhost:7001/default/getArticleList').then(
+        axios(servicePath.getArticleList).then(
             (res) => {
                 console.log('----->', res.data)
                 resolve(res.data)
