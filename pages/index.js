@@ -32,7 +32,7 @@ const Home = (list) => {
 						renderItem={item=>(
 							<List.Item>
 								<div className="list-title">
-                                    <Link href={{pathname: '/', query: {id:item.id}}}>
+                                    <Link href={{pathname: '/detailed', query: {id:item.id}}}>
                                         <a>{item.title}</a>
                                     </Link>
                                 </div>
