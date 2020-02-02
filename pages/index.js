@@ -7,15 +7,30 @@ import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
-
 import '../public/style/pages/index.css'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/monokai-sublime.css'
+
 import servicePath from '../config/apiUrl'
 
 
 const Home = (list) => {
 
 	const [mylist, setMylist] = useState(list.data)
-
+    const renderer = new marked.Renderer()
+    marked.setOptions({
+        renderer: renderer,
+        gfm: true,
+        pedantic: false,
+        sanitize: false,
+        tables: true,
+        breaks: false,
+        smartLists: true,
+        highlight: function(code) {
+            return hljs.highlightAuto(code).value
+        }
+    })
 
 	return (
 		<div>
@@ -41,7 +56,9 @@ const Home = (list) => {
 									<span><Icon type="folder" />{item.typeName}</span>
 									<span><Icon type="fire" /> {item.view_count}人</span>
 								</div>
-								<div className="list-context">{item.introduce}</div>
+								<div className="list-context" 
+                                    dangerouslySetInnerHTML={{__html:marked(item.introduce)}}
+                                ></div>
 							</List.Item>
 						)}
 					/>
